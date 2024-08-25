@@ -1,0 +1,26 @@
+@media print {
+    body * {
+        visibility: hidden; /* Hide everything by default */
+        margin: 0; /* Remove margins from the body */
+        padding: 0; /* Remove padding from the body */
+    }
+    
+
+    .print-container, .print-container * {
+        visibility: visible; /* Make the cheque visible */
+    }
+
+    .printable {
+        width: 8in;
+        height: 3.5in;
+        page-break-inside: avoid; /* Prevent page break inside the cheque */
+        border: none; /* Remove border for printing */
+        box-shadow: none; /* Remove shadow for printing */
+        margin: 0;
+        padding: 0;
+    }
+
+    .print:hidden {
+        display: none; /* Hide elements with print:hidden class */
+    }
+}
