@@ -22,7 +22,7 @@ function Cheque({ details }) {
             </div>
 
             <div className="absolute top-4 right-4">
-                <span className="font-semibold text-md mr-5 tracking-wider" >{day} {month} &nbsp;&nbsp;&nbsp;&nbsp;{year}</span>
+                <span className="font-semibold text-md mr-5 tracking-wider">{day} {month} &nbsp;&nbsp;&nbsp;&nbsp;{year}</span>
             </div>
         </div>
     );

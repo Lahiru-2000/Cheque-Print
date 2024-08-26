@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import numberToWords from './numberToWords';
+import numberToWords from './numberToWords'; // Import the utility function
 import { useNavigate } from 'react-router-dom';
 
 function ChequeForm({ onSubmit }) {
     const [payee, setPayee] = useState('');
     const [amount, setAmount] = useState('');
     const [amountInWords, setAmountInWords] = useState('');
+    const [date, setDate] = useState(''); // State for the date
+
     const navigate = useNavigate();
 
     const handleAmountChange = (e) => {
@@ -22,7 +24,7 @@ function ChequeForm({ onSubmit }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const details = { payee, amount, amountInWords, date: new Date().toISOString().split('T')[0] };
+        const details = { payee, amount, amountInWords, date };
         onSubmit(details);
         navigate('/cheque');  // Navigate to the cheque page
     };
@@ -50,6 +52,15 @@ function ChequeForm({ onSubmit }) {
             <div>
                 <label className="block text-sm font-medium text-gray-700">Amount in Words</label>
                 <p className="mt-1 text-lg font-semibold">{amountInWords}</p>
+            </div>
+            <div>
+                <label className="block text-sm font-medium text-gray-700">Date</label>
+                <input
+                    type="date"
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
+                    className="mt-1 block w-full border border-gray-300 rounded-md p-2" required
+                />
             </div>
             <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">Generate Cheque</button>
         </form>
