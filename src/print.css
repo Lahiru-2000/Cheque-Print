@@ -11,8 +11,12 @@
     }
 
     .printable {
-        width: 8in;
-        height: 3.5in;
+        position: absolute; /* Make the cheque absolute positioned */
+        top: 0; /* Align to the top */
+        left: 0; /* Align to the left */
+    
+        width: 7.25in;
+        height: 3in;
         page-break-inside: avoid; /* Prevent page break inside the cheque */
         border: none; /* Remove border for printing */
         box-shadow: none; /* Remove shadow for printing */

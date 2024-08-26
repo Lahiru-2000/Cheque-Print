@@ -17,7 +17,7 @@ function Cheque({ details }) {
             <div className="absolute top-4 right-4 mt-24 mr-20">
                 <span className="font-semibold text-md">{amount}</span>
             </div>
-            <div className="absolute top-16 left-4 w-[270px] ml-24 mt-7">
+            <div className="absolute top-16 left-4 w-[330px] ml-24 mt-7">
                 <span className="font-semibold text-md">{amountInWords} Rupees Only</span>
             </div>
 
