@@ -6,7 +6,7 @@ function ChequeForm({ onSubmit }) {
     const [payee, setPayee] = useState('');
     const [amount, setAmount] = useState('');
     const [amountInWords, setAmountInWords] = useState('');
-    const [date, setDate] = useState(''); // State for the date
+    const [date, setDate] = useState('');
 
     const navigate = useNavigate();
 
@@ -51,7 +51,7 @@ function ChequeForm({ onSubmit }) {
             </div>
             <div>
                 <label className="block text-sm font-medium text-gray-700">Amount in Words</label>
-                <p className="mt-1 text-lg font-semibold">{amountInWords}</p>
+                <p className="mt-1 text-lg font-semibold">{amountInWords} Rupees Only</p>
             </div>
             <div>
                 <label className="block text-sm font-medium text-gray-700">Date</label>
