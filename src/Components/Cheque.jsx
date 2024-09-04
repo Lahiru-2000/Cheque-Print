@@ -10,18 +10,18 @@ function Cheque({ details }) {
 
     return (
         <div className="printable border border-gray-300 rounded-lg p-6 relative bg-white shadow-lg w-[7in] h-[3.5in]">
-            <div className="absolute top-4 left-4 ml-20 mt-14">
-                <span className="font-semibold text-xl">{payee}</span>
+            <div className="absolute top-4 left-4 ml-24 mt-14">
+                <span className="font-medium text-lg text-gray-700">{payee}</span>
             </div>
 
             <div className="absolute top-4 right-4 mt-32 mr-20">
-                <span className="font-semibold text-xl">{amount}.00</span>
+                <span className="font-medium text-lg text-gray-700">{amount}.00</span>
             </div>
             <div className="absolute top-16 left-4 w-[330px] ml-20 mt-14">
-                <span className="font-semibold text-xl">{amountInWords} Rupees Only</span>
+                <span className="font-medium text-lg text-gray-700">{amountInWords} Rupees Only</span>
             </div>
 
-            <div className="font-semibold text-xl mr-[-2px] flex float-end " style={{ letterSpacing: '0.6em' }}>
+            <div className="font-medium text-lg text-gray-700 mr-[-2px] flex float-end " style={{ letterSpacing: '0.6em' }}>
     <span className="mr-2">{day}</span>
     <span className="mr-6">{month}</span>
     <span className="ml-8">{year}</span>
