@@ -7,6 +7,7 @@ function ChequeForm({ onSubmit }) {
     const [amount, setAmount] = useState('');
     const [amountInWords, setAmountInWords] = useState('');
     const [date, setDate] = useState('');
+    const [showXXXX, setShowXXXX] = useState(false); // State for showing "XXXX"
 
     const navigate = useNavigate();
 
@@ -24,7 +25,7 @@ function ChequeForm({ onSubmit }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const details = { payee, amount, amountInWords, date };
+        const details = { payee, amount, amountInWords, date, showXXXX }; // Include showXXXX in details
         onSubmit(details);
         navigate('/cheque');  // Navigate to the cheque page
     };
@@ -62,7 +63,21 @@ function ChequeForm({ onSubmit }) {
                     className="mt-1 block w-full border border-gray-300 rounded-md p-2" required
                 />
             </div>
-            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">Generate Cheque</button>
+
+            {/* Add or remove the "XXXX" */}
+            <div className="flex items-center">
+                <label className="mr-2 text-sm font-medium text-gray-700">Add "XXXX" Above Payee</label>
+                <input
+                    type="checkbox"
+                    checked={showXXXX}
+                    onChange={() => setShowXXXX(!showXXXX)}
+                    className="h-4 w-4 text-blue-600 border-gray-300 rounded"
+                />
+            </div>
+
+            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">
+                Generate Cheque
+            </button>
         </form>
     );
 }
